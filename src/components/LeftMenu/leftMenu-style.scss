@@ -1,0 +1,96 @@
+
+
+.leftMenu{
+    width: 300px;
+    height: 100%;
+    position: relative;
+
+
+    &__buttonWrapper{
+        margin: 20px auto;
+        width: 85%;
+    }
+
+}
+
+
+.profileWrapper{
+    position: relative;
+    margin: 20px auto;
+    width: 85%;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgb(199, 199, 199);
+    border-radius: 5px;
+
+    &__upper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgb(214, 214, 214);
+    }
+    &__lower{
+        padding: 5px 0;
+    }
+
+    &__name{
+        margin: 10px 0 0;
+        color: rgb(71, 114, 155);
+        font-size: 15px;
+     
+    }
+    &__job{
+        margin: 10px 0 20px;
+        color: rgb(178, 182, 187);
+    }
+
+    &__image{
+        width: 30%;
+        margin: 10px 0;
+    }
+
+    &__singleRow{
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__publications{
+        color: rgb(107, 107, 107);
+    }
+    &__network{
+        color: rgb(107, 107, 107);
+    }
+
+    &__btn{
+        position: relative;
+        background-color: white;
+        border: 1px solid rgb(128, 128, 128);
+        border-radius: 5px;
+        padding: 3px 6px 1px;
+        cursor: pointer;
+    }
+
+
+}
+
+
+.buttonWrapper{
+
+
+    &__singleRow{
+        margin: 15px 20px;
+        display: flex;       
+        align-items: center;
+    }
+
+    &__icon{
+        margin-right: 10px;
+    }
+    &__text{
+        margin-left: 10px;
+        color: rgb(104, 104, 104);
+    }
+
+}

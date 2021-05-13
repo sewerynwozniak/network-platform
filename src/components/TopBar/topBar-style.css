@@ -1,0 +1,126 @@
+.topBar {
+  position: relative;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 4px 10px -2px #dfdfdf;
+          box-shadow: 0 4px 10px -2px #dfdfdf;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topBar__logo {
+  height: 80%;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.topBar__input {
+  height: 60%;
+  width: 600px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-image: url(../../assets/media/icons/search.png);
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: center;
+}
+
+.topBar__currentMenu {
+  padding-right: 50px;
+}
+
+.topBar__a {
+  margin: 0 150px 0 0;
+  cursor: pointer;
+  color: #686868;
+}
+
+.topBar__homeIcon {
+  margin: 0 10px;
+}
+
+.topBar__arrowDown {
+  margin: 0 50px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.topBar__link {
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+.topBar__messagesBtn {
+  position: relative;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 100px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topBar__rightContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: unset;
+      -ms-flex-positive: unset;
+          flex-grow: unset;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+.topBar__linkCategory {
+  display: block;
+}
+
+.topBar__ul--visible {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  list-style: none;
+  padding: 10px;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.topBar__ul--novisible {
+  display: none;
+}
+
+.topBar__li {
+  margin: 10px;
+}
+
+.topBar__li:hover {
+  color: #636363;
+}
+
+.topBar__notifications {
+  top: -5px;
+  right: -5px;
+  position: absolute;
+  border-radius: 10px;
+  padding: 0px 5px;
+  background-color: #258a79;
+  color: #fff;
+  font-size: 10px;
+}
+/*# sourceMappingURL=topBar-style.css.map */

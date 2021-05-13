@@ -1,0 +1,106 @@
+.leftMenu {
+  width: 300px;
+  height: 100%;
+  position: relative;
+}
+
+.leftMenu__buttonWrapper {
+  margin: 20px auto;
+  width: 85%;
+}
+
+.profileWrapper {
+  position: relative;
+  margin: 20px auto;
+  width: 85%;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 3px #c7c7c7;
+          box-shadow: 1px 1px 3px #c7c7c7;
+  border-radius: 5px;
+}
+
+.profileWrapper__upper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.profileWrapper__lower {
+  padding: 5px 0;
+}
+
+.profileWrapper__name {
+  margin: 10px 0 0;
+  color: #47729b;
+  font-size: 15px;
+}
+
+.profileWrapper__job {
+  margin: 10px 0 20px;
+  color: #b2b6bb;
+}
+
+.profileWrapper__image {
+  width: 30%;
+  margin: 10px 0;
+}
+
+.profileWrapper__singleRow {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileWrapper__publications {
+  color: #6b6b6b;
+}
+
+.profileWrapper__network {
+  color: #6b6b6b;
+}
+
+.profileWrapper__btn {
+  position: relative;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px 6px 1px;
+  cursor: pointer;
+}
+
+.buttonWrapper__singleRow {
+  margin: 15px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttonWrapper__icon {
+  margin-right: 10px;
+}
+
+.buttonWrapper__text {
+  margin-left: 10px;
+  color: #686868;
+}
+/*# sourceMappingURL=leftMenu-style.css.map */
