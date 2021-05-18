@@ -2,24 +2,31 @@ import React from 'react'
 import TopBar from './components/TopBar/TopBar';
 import LeftMenu from './components/LeftMenu/LeftMenu';
 import Main from './components/Main/Main';
+import LatestPublications from './components/Main/latestPublications/LatestPublications';
+import Workspaces from './components/Main/workspaces/Workspaces';
+import Works from './components/Main/works/Works';
 import './assets/style/home.css';
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import About from './components/TopBar/About';
+
 
 const App = () => {
     return (
         <div>
             <Router>
-                <Switch>
+                
                     <Route exact path='/'>
                     <TopBar />
                     <section className="section">
-                    <LeftMenu />
+                        <LeftMenu />
+                        <main>
+                            <LatestPublications />
+                            <Workspaces />
+                            <Works />
+                        </main>                 
                     </section>
                     </Route>
-                    <Route path='/about'>
-                            <About />
-                    </Route>
+                <Switch>
+                    
                 </Switch>
             </Router>
         </div>

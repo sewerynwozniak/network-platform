@@ -24,34 +24,7 @@
         
     }
 
-    &__currentMenu{
-        padding-right: 50px;
-    }
-
-    &__a{
-        margin: 0 150px 0 0;
-        cursor: pointer;
-        color: rgb(104, 104, 104);
-    }
-
-    &__homeIcon{
-        margin: 0 10px;
-    }
-
-    &__arrowDown{
-        margin: 0 50px;
-        background-color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-
-    &__link{
-        padding: 5px 0;
-        text-decoration: none;
-    }
-
-
+    
     &__messagesBtn{
         position: relative;
         padding: 5px;
@@ -73,30 +46,6 @@
         margin-right: 20px;
     }
 
-    &__linkCategory{
-        display: block;
-    }
-
-    &__ul--visible{
-        position: absolute;
-        background-color: #fff;
-        border:  1px solid rgb(226, 226, 226);
-        list-style: none;
-        padding: 10px;
-        z-index: 2;
-        border-radius: 5px;
-    }
-    
-    &__ul--novisible{
-        display: none;
-    }
-
-    &__li{
-        margin: 10px;
-        &:hover{
-            color: rgb(99, 99, 99);
-        }
-    }
 
     &__notifications{
         top: -5px;
@@ -111,3 +60,104 @@
 
 }
 
+
+.expMenu{
+
+
+    &__input{
+        margin: 5px;
+        box-sizing: border-box;
+        width: calc(100% - 10px);
+        padding: 3px 0;
+        border-radius: 3px;
+        border: solid 1px rgb(194, 194, 194);
+   
+        
+    }
+
+    &__ul--visible{
+        position: absolute;
+        background-color: #fff;
+        border:  1px solid rgb(226, 226, 226);
+        list-style: none;
+        z-index: 2;
+        border-radius: 5px;
+    }
+    
+    &__ul--novisible{
+        display: none;
+    }
+
+    &__currentMenu{
+        padding-right: 50px;
+    }
+
+    &__li{
+        margin: 10px;
+        //text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        &:hover{
+            color: rgb(99, 99, 99);
+        }
+    }
+
+    &__linkCategory{
+        display: block;
+        text-align: left;
+        margin: 10px 0 5px 10px;
+        font-weight: lighter;
+    }
+
+
+    &__iconContainer{
+        width: 20px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    &__liIcon{
+        width: 100%;
+       
+    }
+
+    &__arrowDown{
+        margin: 0 50px;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    &__link{
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+
+    &__a{
+        margin: 0 150px 0 0;
+        cursor: pointer;
+        color: rgb(104, 104, 104);
+    }
+
+    &__homeIcon{
+        margin: 0 10px;
+    }
+
+
+    &__logout{
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-top: 1px solid rgb(207, 207, 207);
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    &__logOutIcon{
+        margin-right: 10px;
+    }
+
+}

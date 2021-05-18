@@ -2,6 +2,7 @@
   width: 300px;
   height: 100%;
   position: relative;
+  background-color: #f1f1f1;
 }
 
 .leftMenu__buttonWrapper {
