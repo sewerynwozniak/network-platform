@@ -3,15 +3,9 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import store from './redux/store'
-// import {createStore} from 'redux';
-// import allReducers from './reducers'
- import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux'
-// const store = createStore(allReducers, composeWithDevTools())
 
 
-
-console.log(store)
 
 
 ReactDOM.render(

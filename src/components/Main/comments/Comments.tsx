@@ -1,6 +1,8 @@
-import React from 'react'
+import {useEffect} from 'react'
 import './comments-style.css'
-import {RootStateOrAny,useSelector} from 'react-redux';
+import {setComments} from '../../../redux/actions/index'
+import '../../../redux/actions/index'
+import {RootStateOrAny,useSelector, useDispatch} from 'react-redux';
 
 
 
@@ -8,11 +10,46 @@ import {RootStateOrAny,useSelector} from 'react-redux';
 const Comments = () => {
 
 
-const comments = useSelector((state:RootStateOrAny) => state)
+const comments = useSelector((state:RootStateOrAny) => state.commentsState);
+const users = useSelector((state:RootStateOrAny)=>state.userState);
+
+const dispatch = useDispatch()
+
+//filter user by their comments
+const filterAuthor =(postId)=>{
+   return users.filter(user=>user.id==postId? user:'')[0].name
+}
 
 
-console.log('comments', comments)
 
+
+useEffect(() => {
+   dispatch(setComments())    
+}, [])
+
+
+
+
+const renderPost = ()=>{
+    if(comments.loading){
+       return <h1>Loading</h1>
+    }
+
+    return (
+        comments.comments.map(comment=>(
+            <div className='comments__singleWork'>
+                <h3 className='comments__singleWorkTitle'>{comment.name}</h3>
+                <p className='comments__singleWorkContent'>{comment.body}</p>
+                <div className='comments__lower'>
+                    <span className='comments__corp'>{filterAuthor(comment.postId)}</span>
+                    <span className='comments__detail'>Corporate</span>
+                    <span className='comments__update'>Update 3 days ago by {filterAuthor(comment.postId)}</span>
+                </div>
+            </div>
+        ))
+    )
+
+}
 
     return (
         <div className='comments__container'>
@@ -23,18 +60,9 @@ console.log('comments', comments)
             </div>
 
             <div className='comments__wrapper'>
-
-                {comments.map(comment=>(
-                    <div className='comments__singleWork'>
-                        <h3 className='comments__singleWorkTitle'>{comment.name}</h3>
-                        <p className='comments__singleWorkContent'>{comment.body}</p>
-                        <div className='comments__lower'>
-                            <span className='comments__corp'>Subsid corp</span>
-                            <span className='comments__detail'>Corporate</span>
-                            <span className='comments__update'>Update 3 days ago by John Doe</span>
-                        </div>
-                    </div>
-                ))}
+                      
+             
+                {renderPost()}
 
 
             </div>

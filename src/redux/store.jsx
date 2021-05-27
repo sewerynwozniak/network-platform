@@ -1,23 +1,23 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers, applyMiddleware } from 'redux';
 import commentsReducer from './reducers/comments'
+import usersReducer from './reducers/users'
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 
 
 
 
-
-const fetchComments = async ()=>{
-
-     const promise = await fetch('https://jsonplaceholder.typicode.com/comments?_start=0&_limit=10');    
-     const data = await promise.json()
-    return data
-}
-
-fetchComments()
+const rootReducer = combineReducers({
+    commentsState:commentsReducer,
+    userState:usersReducer
+})
 
 
-const store = createStore(commentsReducer);
+
+
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
 
 
 export default store;
