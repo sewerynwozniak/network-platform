@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import './comments-style.css'
-import {setComments} from '../../../redux/actions/index'
-import '../../../redux/actions/index'
+import {setComments} from '../../../redux/actions/commentsAction'
+import {setUsers} from '../../../redux/actions/usersAction'
 import {RootStateOrAny,useSelector, useDispatch} from 'react-redux';
 
 
@@ -11,13 +11,16 @@ const Comments = () => {
 
 
 const comments = useSelector((state:RootStateOrAny) => state.commentsState);
-const users = useSelector((state:RootStateOrAny)=>state.userState);
+const users = useSelector((state:RootStateOrAny)=>state.usersState);
 
 const dispatch = useDispatch()
 
 //filter user by their comments
 const filterAuthor =(postId)=>{
-   return users.filter(user=>user.id==postId? user:'')[0].name
+    if(comments.success && users.success){
+        return users.users.filter(user=>user.id==postId? user:'')[0].name
+   }
+   
 }
 
 
@@ -25,7 +28,9 @@ const filterAuthor =(postId)=>{
 
 useEffect(() => {
    dispatch(setComments())    
+   dispatch(setUsers())    
 }, [])
+
 
 
 
@@ -60,10 +65,8 @@ const renderPost = ()=>{
             </div>
 
             <div className='comments__wrapper'>
-                      
-             
+                            
                 {renderPost()}
-
 
             </div>
         </div>
