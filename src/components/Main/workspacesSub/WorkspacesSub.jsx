@@ -1,12 +1,12 @@
 import React from 'react'
-import './workspaces-style.css'
+import './workspacesSub-style.css'
 import sliderIcon from '../../../assets/media/icons/entities.png'
 
 const Workspaces = () => {
     return (
-        <div className='workspaces__container'>
-            <h3 className='workspaces__header'>Workspaces</h3>
-            <div className='workspaces__sliderContainer'>
+        <div className='workspacesSub__container'>
+            <h3 className='workspacesSub__header'>Workspaces</h3>
+            <div className='workspacesSub__sliderContainer'>
 
                 <div className='slider__singleSlider'>
                     <div className='slider__upper'></div>

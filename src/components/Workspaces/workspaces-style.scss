@@ -1,0 +1,77 @@
+.workspaces{
+
+    &__header{
+        margin: 50px;
+        height: 250px;
+        background-color: #fff;
+        
+        &Upper{
+            height: 60%;
+            background-image: url('../../assets/media/conferenceRoom.jpg');
+            background-position: center;
+        }
+        &Lower{
+          position: relative;
+          height: 40%;
+          display: flex;
+          
+            &Left{
+                width: 10%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &Right{
+                width: 90%;
+            }
+
+        }
+
+    }
+
+
+    &__blocksWrapper{
+        height: 250px;
+        margin: 50px;
+        background-color: rgba(134, 134, 134, 0.562);
+        display: flex;
+        justify-content: space-around;
+        border-radius: 5px;
+    }
+    &__singleBlock{
+        width: 250px;
+        margin: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+
+        &Icon{
+            margin: 10px;
+        }
+        &Title{
+            margin: 10px 20px;
+            font-weight: 500;
+            color: rgb(71, 69, 69);
+        }
+        &Text{
+            margin: 10px;
+            color: rgb(116, 116, 116);
+        }
+
+    }
+
+
+    &__h5{
+        color: rgb(77, 77, 77);
+        margin:10px
+    }
+    &__p{
+        color: rgb(90, 90, 90);
+        margin:10px
+    }
+
+    
+
+
+
+}

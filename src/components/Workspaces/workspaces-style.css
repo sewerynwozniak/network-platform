@@ -1,0 +1,82 @@
+.workspaces__header {
+  margin: 50px;
+  height: 250px;
+  background-color: #fff;
+}
+
+.workspaces__headerUpper {
+  height: 60%;
+  background-image: url("../../assets/media/conferenceRoom.jpg");
+  background-position: center;
+}
+
+.workspaces__headerLower {
+  position: relative;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.workspaces__headerLowerLeft {
+  width: 10%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.workspaces__headerLowerRight {
+  width: 90%;
+}
+
+.workspaces__blocksWrapper {
+  height: 250px;
+  margin: 50px;
+  background-color: rgba(134, 134, 134, 0.562);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+}
+
+.workspaces__singleBlock {
+  width: 250px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.workspaces__singleBlockIcon {
+  margin: 10px;
+}
+
+.workspaces__singleBlockTitle {
+  margin: 10px 20px;
+  font-weight: 500;
+  color: #474545;
+}
+
+.workspaces__singleBlockText {
+  margin: 10px;
+  color: #747474;
+}
+
+.workspaces__h5 {
+  color: #4d4d4d;
+  margin: 10px;
+}
+
+.workspaces__p {
+  color: #5a5a5a;
+  margin: 10px;
+}
+/*# sourceMappingURL=workspaces-style.css.map */
