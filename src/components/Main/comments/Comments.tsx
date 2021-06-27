@@ -68,7 +68,7 @@ const displayPosts = (comments)=>{
 
 
 
-const handeExpandedBtn = ()=>{
+const handleExpandedBtn = ()=>{
     setExpanded(!expanded)
 }
 
@@ -92,7 +92,7 @@ const filterNone = ()=>{
                 <h3 className='comments__title'>Resume your work</h3>
                 <input className='comments__input' placeholder='Filter by title' type="text"/>
                 <div className="comments__btnWrapper">
-                    <button className='comments__btn' onClick={handeExpandedBtn}>
+                    <button className='comments__btn' onClick={handleExpandedBtn}>
                         <img className='comments__btnIcon' src={broadcastIcon} alt="" /> 
                         Followed 
                         <img className='comments__btnIcon' src={arrowDownIcon} alt="" />

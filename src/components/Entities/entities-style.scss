@@ -1,0 +1,237 @@
+.entities{
+
+    &__wrapper{
+        width: calc(100% - 300px);
+        position: relative;
+        padding-left: 10px;
+    }
+    &__fullScreenWrapper{
+        top: 0;
+        width: 100%;
+        position: absolute;
+        background-color: rgb(236, 236, 236);
+        padding-left: 5px;
+    }
+    &__firstTopBar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+    &__secondTopBar{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+    &__h5{
+        width: calc(100% - 70px);
+    }
+    &__secondTopBar{
+        display: flex;
+        align-items: center;
+        height: 30px;
+        position: relative;
+
+        &__left{
+            display: flex;
+            width: 70%;
+        }
+        &__right{
+            display: flex;
+            width: 30%;
+        }
+
+    }
+    &__iconsContainer{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        width: 70px;
+        margin: 10px;
+        border: 1px solid rgb(121, 120, 120);
+        border-radius: 10px;
+    }
+
+    &__firstTopBarIcons{
+        margin: 2px 5px;
+        cursor: pointer;
+    }
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        
+    }
+
+    &__filterContainer{
+        padding-top: 10px;
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 1px 1px 10px rgb(168, 168, 168);
+        border-radius: 5px;
+        cursor: default;
+    }
+    &__filterSpan{
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    &__noDisplay{
+        display: none;
+    }
+
+    &__filterRow{
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 10px;
+    }
+
+    &__xIcon{
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    &__filterInput{
+        width: 100px;
+        border: none;
+        border-radius: 3px;
+        display: flex;
+        padding: 1px;
+        background-color: rgb(207, 207, 207);
+    }
+
+    &__filterBtn{
+        margin: 0 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__arrowDownIcon{
+        margin: 0 10px;
+    }
+
+    &__clicked{
+        transform: scale(0.8);
+      
+    }
+
+    &__mosaicView{
+        flex-direction: row;
+    }
+    &__horizontalView{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__allBtn{
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(128, 128, 128);
+        border-radius: 5px;
+        background-color: rgb(253, 253, 253);
+        cursor: pointer;
+
+        &__el{
+            margin: 5px;
+        }
+    }
+
+    &__followedBtn{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(158, 158, 158);
+        cursor: pointer;
+    }
+
+    &__followeBtnIcon{
+        margin: 5px;
+    }
+
+    &__btnWrapper{
+        position: relative;
+    }
+
+    &__input{
+        border-radius: 5px;
+        border: 1px solid rgb(202, 202, 202);
+    }
+
+    &__singleBtn{
+        display: flex;
+        align-items: center;
+    }
+
+
+
+
+    &__singleIcon{
+        height: 70%;
+    }
+
+    &__expandedFilter{
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        list-style: none;
+        position: absolute;
+        margin-top: 5px;
+        border: 1px solid rgb(202, 202, 202);
+        border-radius: 5px;
+
+
+
+        &Li{
+            
+            color: rgb(54, 54, 54);
+            margin: 5px;
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+                background-color: rgb(235, 235, 235);
+            }
+        }
+    }
+
+    &__displayNone{
+        display: none;
+    }
+
+
+    &__entityContainer{
+        width: 300px;
+        height: 110px;
+        margin: 10px;
+        box-shadow: 0 0 3px rgb(70, 70, 70);
+        border-radius: 5px;
+        display: flex;
+    }
+
+    &__entityImg{
+        width: 35%;
+        margin: 5px;
+    }
+
+    &__entityTextContainer{
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__entityTitle{
+        color: rgb(74, 97, 122);       
+    }
+    &__entitySubTitle{
+        color: rgb(139, 139, 139);
+        font-size: 13px;       
+    }
+
+}
