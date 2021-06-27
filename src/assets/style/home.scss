@@ -2,6 +2,9 @@
     display: flex;
     background-color: rgb(240, 240, 240);
 }
+.main{
+    width: calc(100% - 300px);
+}
 
 .noBtnStyle{
     border: none;

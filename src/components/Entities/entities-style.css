@@ -1,7 +1,6 @@
 .entities__wrapper {
   width: calc(100% - 300px);
   position: relative;
-  padding-left: 10px;
 }
 
 .entities__fullScreenWrapper {

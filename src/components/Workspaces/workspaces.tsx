@@ -5,7 +5,7 @@ import entitiesIcon from '../../assets/media/icons/entities2.png'
 
 const workspaces = () => {
     return (
-        <div>
+        <div className='workspaces'>
             <header className='workspaces__header'>
                 <div className="workspaces__headerUpper">
                     

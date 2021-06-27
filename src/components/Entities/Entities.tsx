@@ -27,7 +27,7 @@ const Entities = () => {
     const [filterWindow, setFilterWindow] = useState(false)
     const [fullscreen, setFullscreen] = useState(false)
     const [sorted, setSorted] = useState(false)
-    const [refresh, setRefresh] = useState(false)
+ 
 
 
 
@@ -35,6 +35,7 @@ const Entities = () => {
         setExpanded(!expanded)
     }
 
+    const [filtered, setFiltered] = useState(false)
 
     let entities = useSelector((state:RootStateOrAny) => state.entitiesState.entities);
 
@@ -114,6 +115,16 @@ const toggleFullscreen =()=>{
 }
 const copyURL =()=>{
     navigator.clipboard.writeText(window.location.href)
+}
+
+const filterOwnEntities = ()=>{
+    setFiltered(true)
+    setExpanded(false)
+}
+
+const filterNone = ()=>{
+    setFiltered(false)
+    setExpanded(false)
 }
 
 
@@ -227,8 +238,8 @@ const copyURL =()=>{
                             <img className='entities__followeBtnIcon' src={arrowDownIcon}  alt="" />
                         </button>                 
                         <ul className={expanded? 'entities__expandedFilter': 'entities__displayNone'}>
-                            <li className='entities__expandedFilterLi'>my</li>
-                            <li className='entities__expandedFilterLi'>all</li>
+                            <li className='entities__expandedFilterLi' onClick={filterOwnEntities}>my</li>
+                            <li className='entities__expandedFilterLi' onClick={filterNone}>all</li>
                         </ul>                 
                     </div>
                 </div>
@@ -237,13 +248,10 @@ const copyURL =()=>{
 
             <div className= {mosaicView? 'entities__body  entities__mosaicView': 'entities__body  entities__horizontalView'}>  
        
-                {displayEntities(entities)}
+                {/* {displayEntities(entities)} */}
 
-                    {/* {ent.map(e=>{
-                        console.log(e)
-                        
-                    })}  */}
-
+        
+                {filtered? displayEntities(entities.filter(e=>e.albumId==1)):displayEntities(entities)}
 
             </div>
 

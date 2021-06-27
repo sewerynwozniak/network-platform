@@ -6,6 +6,7 @@ import Comments from './components/Main/comments/Comments';
 import Workspaces from './components/Workspaces/workspaces';
 import Entities from './components/Entities/Entities';
 import Profile from './components/Profile/Profile';
+import Test from './components/Test';
 import './assets/style/home.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
@@ -27,7 +28,7 @@ const App = () => {
                 <LeftMenu />
                     <Switch>
                         <Route exact path='/'>                                                       
-                                <main>
+                                <main className='main'>
                                     <LatestPublications />
                                     <WorkspacesSub />
                                     <Comments />
@@ -41,6 +42,9 @@ const App = () => {
                         </Route>
                         <Route path='/profile'>
                             <Profile/>
+                        </Route>
+                        <Route path='/test'>
+                            <Test/>
                         </Route>
                     </Switch>
                     </section>

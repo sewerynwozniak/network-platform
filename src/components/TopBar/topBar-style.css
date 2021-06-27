@@ -12,6 +12,16 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.topBar__logoContainer {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .topBar__logo {
   height: 80%;
   margin: 0 20px;
@@ -29,6 +39,22 @@
   background-position-y: center;
 }
 
+.topBar__homeBtn {
+  position: relative;
+  margin: 0 5px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
 .topBar__messagesBtn {
   position: relative;
   padding: 5px;
@@ -44,6 +70,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .topBar__rightContainer {
@@ -70,6 +97,7 @@
   background-color: #258a79;
   color: #fff;
   font-size: 10px;
+  cursor: pointer;
 }
 
 .expMenu__input {
@@ -162,6 +190,15 @@
   border-top: 1px solid #cfcfcf;
   background-color: #fff;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .expMenu__logOutIcon {

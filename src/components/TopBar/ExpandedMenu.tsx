@@ -1,4 +1,7 @@
-import React, {useState, useEffect, useRef, createRef} from 'react';
+import React, {useState, useEffect} from 'react';
+import {RootStateOrAny, useSelector, useDispatch} from 'react-redux'
+import {setEntities} from '../../redux/actions/entitiesAction'
+import setUsers from '../../redux/actions/usersAction'
 import arrowDownIcon from '../../assets/media/icons/arrow-down.png';
 import homeIcon from '../../assets/media/icons/house2.png';
 import publicationsIcon from '../../assets/media/icons/publications.png';
@@ -10,7 +13,6 @@ import documentIcon from '../../assets/media/icons/document.png';
 import privacyIcon from '../../assets/media/icons/privacy.png';
 import settingsIcon from '../../assets/media/icons/settings.png';
 import logoutIcon from '../../assets/media/icons/logout.png';
-import profileImage from '../../assets/media/profileImage.png';
 import {Link} from "react-router-dom";
 
 
@@ -20,9 +22,29 @@ import {Link} from "react-router-dom";
 
 function ExpandedMenu() {
 
+
+
+    const users = useSelector((state:RootStateOrAny)=>state.usersState.users);
+    const photos = useSelector((state:RootStateOrAny) => state.entitiesState.entities);
+ 
+
+    const dispatch = useDispatch()
+
+    useEffect(() => { 
+        dispatch(setUsers())    
+        dispatch(setEntities())  
+     }, [])
+
+
+     
+
+
+
 const [click, setClick] = useState(false);
 
 const [search, setSearch] = useState('');
+
+
 
 const menuList = [
     {
@@ -35,14 +57,14 @@ const menuList = [
     {
         key:2,
         name:'Publications',
-        path:'/publications',
+        path:'/test',
         srcIcon:publicationsIcon,
         category:'platform'
     },
     {
         key:3,
         name:'People',
-        path:'/people',
+        path:'/test',
         srcIcon:peopleIcon,
         category:'platform'
     },
@@ -56,67 +78,69 @@ const menuList = [
     {
         key:5,
         name:'Administration',
-        path:'/administration',
+        path:'/test',
         srcIcon:administrationIcon,
         category:'platform'
     },
     {
         key:6,
         name:'Client Contract',
-        path:'/clientContract',
+        path:'/test',
         srcIcon:publicationsIcon,
         category:'workspaces'
     },
     {
         key:7,
         name:'Supplier Contract',
-        path:'/supplierContract',
+        path:'/test',
         srcIcon:publicationsIcon,
         category:'workspaces'
     },
     {
         key:8,
         name:'Corporate',
-        path:'/corporate',
+        path:'/test',
         srcIcon:entitiesIcon2,
         category:'workspaces'
     },
     {
         key:9,
         name:'Group Norms',
-        path:'/groupNorms',
+        path:'/test',
         srcIcon:documentIcon,
         category:'workspaces'
     },
     {
         key:10,
         name:'Real Estate Contract',
-        path:'/realEstateContract',
+        path:'/test',
         srcIcon:publicationsIcon,
         category:'workspaces'
     },
     {
         key:11,
-        name:'Adam Sandler',
+        name:'Leanne Graham',
         path:'/profile',
-        srcIcon:profileImage,
+        srcIcon:photos[0]?.thumbnailUrl,
         category:'account'
     },
     {
         key:12,
         name:'Privacy',
-        path:'/privacy',
+        path:'/test',
         srcIcon:privacyIcon,
         category:'account'
     },
     {
         key:13,
         name:'Settings',
-        path:'/settings',
+        path:'/test',
         srcIcon:settingsIcon,
         category:'account'
     },
 ]
+
+
 
 
 const [menu, setMenu] = useState(menuList);
@@ -130,6 +154,11 @@ const handleExpandedMenu =()=>{
 const filter = (e)=>{
     setSearch(e.target.value); 
 }
+
+
+useEffect(() => {
+    
+}, [])
 
 
 useEffect(() => {
@@ -171,27 +200,27 @@ const myRef = React.useRef<HTMLDivElement>(null);
                 <input className='expMenu__input' onChange={filter} type="text" placeholder='Filter'/>
 
                 {menu.some(e=>e.category=='platform')&&<span className="expMenu__linkCategory">Platform</span>}
-                {menu.filter(e=>e.category=='platform').map(({name, srcIcon})=>(
+                {menu.filter(e=>e.category=='platform').map(({name, srcIcon, path})=>(
                     <li className="expMenu__li">
-                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to='/'>{name}</Link>
+                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to={path}>{name}</Link>
                     </li>
                 ))}
 
                 {menu.some(e=>e.category=='workspaces')&&<span className="expMenu__linkCategory">Workspaces</span>}
-                {menu.filter(e=>e.category=='workspaces').map(({name, srcIcon})=>(
+                {menu.filter(e=>e.category=='workspaces').map(({name, srcIcon, path})=>(
                     <li className="expMenu__li">
-                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to='/'>{name}</Link>
+                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to={path}>{name}</Link>
                     </li>
                 ))}
                  {menu.some(e=>e.category=='account')&&<span className="expMenu__linkCategory">Account</span>}
-                 {menu.filter(e=>e.category=='account').map(({name, srcIcon})=>(
+                 {menu.filter(e=>e.category=='account').map(({name, srcIcon, path})=>(
                     <li className="expMenu__li">
-                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to='/'>{name}</Link>
+                    <div className="expMenu__iconContainer"><img className="expMenu__liIcon" src={srcIcon} alt=""/></div> <Link className="expMenu__link" to={path}>{name}</Link>
                     </li>
                 ))}
                 <button className='expMenu__logout'>
                     <img className='expMenu__logOutIcon' src={logoutIcon}></img>
-                    Logout
+                    <Link className="expMenu__link" to='/test'>Logout</Link>                  
                 </button>
              </ul>
         </div>

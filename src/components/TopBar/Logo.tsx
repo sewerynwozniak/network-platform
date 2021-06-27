@@ -1,13 +1,13 @@
-import React from 'react';
+import {Link} from "react-router-dom";
 import logo from '../../assets/media/logo.png'
 import './topBar-style.css'
 
 
 function Logo() {
     return (
-        <img className="topBar__logo" src={logo} alt="logo">
-            
-        </img>
+        <Link className="topBar__logoContainer"  to="/">
+            <img className="topBar__logo" src={logo} alt="logo"></img>
+        </Link>
     );
 }
 
