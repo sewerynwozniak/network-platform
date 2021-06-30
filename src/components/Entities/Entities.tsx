@@ -15,6 +15,7 @@ import shareIcon from '../../assets/media/icons/share.png';
 import broadcastIcon from '../../assets/media/icons/broadcast.png';
 import xIcon from '../../assets/media/icons/x.png';
 import plusIcon from '../../assets/media/icons/plus.png';
+import { Console } from 'node:console'
 
 
 const Entities = () => {
@@ -27,7 +28,8 @@ const Entities = () => {
     const [filterWindow, setFilterWindow] = useState(false)
     const [fullscreen, setFullscreen] = useState(false)
     const [sorted, setSorted] = useState(false)
- 
+    const [filtered, setFiltered] = useState(false)
+    const [filterInput, setFilterInput] = useState('')
 
 
 
@@ -35,7 +37,7 @@ const Entities = () => {
         setExpanded(!expanded)
     }
 
-    const [filtered, setFiltered] = useState(false)
+
 
     let entities = useSelector((state:RootStateOrAny) => state.entitiesState.entities);
 
@@ -46,34 +48,6 @@ const Entities = () => {
     useEffect(() => {
        dispatch(setEntities())   
     }, [])
-
-
-    useEffect(() => {
-        sortEntities()  
-        return ()=>{
-            
-        }
-     }, [sorted])
-
-
-
-
-    const sortEntities =()=>{
-       
-
-        if(sorted){  
-            entities.sort((a,b)=>a.title.localeCompare(b.title))
-            console.log('sortedByTitle', entities)
-        }else{
-            entities.sort((a,b)=>a.id-b.id)
-            console.log('sortedById', entities)
-        }
-        
-
-    }
-
-
-
 
 
 
@@ -128,6 +102,19 @@ const filterNone = ()=>{
 }
 
 
+const sortEntities =()=>{
+       
+    if(sorted){  
+        entities.sort((a,b)=>a.id-b.id)
+        setSorted(!sorted) 
+    }else{
+        entities.sort((a,b)=>a.title.localeCompare(b.title))
+        setSorted(!sorted)      
+    }
+    
+
+}
+
 
 
     return (
@@ -154,7 +141,7 @@ const filterNone = ()=>{
                     <button className='entities__singleIBtn noBtnStyle'>
                         <img className='entities__singleIcon' src={moreIcon} alt="" />
                     </button>
-                    <button className='entities__singleIBtn noBtnStyle' onClick={()=>setSorted(!sorted)}>
+                    <button className='entities__singleIBtn noBtnStyle' onClick={sortEntities}>
                         <img className='entities__singleIcon' src={sortIcon} alt="" />
                     </button>
                     <button className='entities__singleIBtn noBtnStyle'>
@@ -230,7 +217,7 @@ const filterNone = ()=>{
                     </button>
                 </div>
                 <div className='entities__secondTopBar__right'>
-                    <input className='entities__input' placeholder='Filter by title' type="text"/>
+                    <input className='entities__input' placeholder='Filter by title' type="text" onChange={(e)=>setFilterInput(e.target.value.toLowerCase())}/>
                     <div className="entities__btnWrapper">
                         <button className='entities__followedBtn' onClick={handleExpandedBtn}>
                             <img className='entities__followeBtnIcon' src={broadcastIcon} alt="" /> 
@@ -247,11 +234,11 @@ const filterNone = ()=>{
 
 
             <div className= {mosaicView? 'entities__body  entities__mosaicView': 'entities__body  entities__horizontalView'}>  
-       
-                {/* {displayEntities(entities)} */}
-
-        
-                {filtered? displayEntities(entities.filter(e=>e.albumId==1)):displayEntities(entities)}
+              
+                {/* {filtered? displayEntities(entities.filter(e=>e.albumId==1)):displayEntities(entities)} */}
+                {filtered? displayEntities(entities.filter(ent=>ent.albumId==1 && ent.title.indexOf(filterInput)!=-1)):
+                        displayEntities(entities.filter(ent=>ent.title.indexOf(filterInput)!=-1))
+                }
 
             </div>
 

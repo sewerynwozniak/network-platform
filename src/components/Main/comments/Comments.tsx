@@ -12,7 +12,9 @@ import {RootStateOrAny,useSelector, useDispatch} from 'react-redux';
 const Comments = () => {
 
 
-const comments = useSelector((state:RootStateOrAny) => state.commentsState);
+
+
+let comments = useSelector((state:RootStateOrAny) => state.commentsState.comments);
 const users = useSelector((state:RootStateOrAny)=>state.usersState);
 
 const dispatch = useDispatch()
@@ -28,6 +30,7 @@ const filterAuthor =(postId)=>{
 
 const [expanded, setExpanded] = useState(false)
 const [filtered, setFiltered] = useState(false)
+const [filterInput, setFilterInput] = useState('')
 
 
 
@@ -41,17 +44,13 @@ useEffect(() => {
 
 
 
+
 const displayPosts = (comments)=>{
-
-
-    if(comments.loading){
-        return <h1>Loading</h1>
-     }
 
     return (
         comments.map(comment=>(
             
-            <div className='comments__singleWork'>
+            <div className='comments__singleWork'>               
                 <h3 className='comments__singleWorkTitle'>{comment.name}</h3>
                 <p className='comments__singleWorkContent'>{comment.body}</p>
                 <div className='comments__lower'>
@@ -62,6 +61,7 @@ const displayPosts = (comments)=>{
             </div>
         ))
     )
+    
 
 }
 
@@ -83,14 +83,16 @@ const filterNone = ()=>{
     setExpanded(false)
 }
 
-
+const getFilterInput = (e)=>{
+    setFilterInput(e.target.value.toLowerCase())
+}
 
 
     return (
         <div className='comments__container'>
             <div className='comments__header'>
                 <h3 className='comments__title'>Resume your work</h3>
-                <input className='comments__input' placeholder='Filter by title' type="text"/>
+                <input className='comments__input' placeholder='Filter by title' type="text" onChange={getFilterInput}/>
                 <div className="comments__btnWrapper">
                     <button className='comments__btn' onClick={handleExpandedBtn}>
                         <img className='comments__btnIcon' src={broadcastIcon} alt="" /> 
@@ -108,7 +110,9 @@ const filterNone = ()=>{
 
             <div className='comments__wrapper'>
                             
-                {filtered?displayPosts(comments.comments.filter(com=>com.postId==1)): displayPosts(comments.comments)}
+                {filtered?  displayPosts(comments.filter(com=>com.postId==1 && com.name.indexOf(filterInput)!=-1)): 
+                            displayPosts(comments.filter(com=>com.name.indexOf(filterInput)!=-1))
+                }
 
             </div>
         </div>
