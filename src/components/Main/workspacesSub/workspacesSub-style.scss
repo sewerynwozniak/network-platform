@@ -1,7 +1,9 @@
 .workspacesSub{
 
     &__container{
-        margin: 50px;
+        padding: 10px;    
+        background-color: rgba(224, 232, 235, 0.822);
+
     }
     &__header{
         margin: 20px;
@@ -10,6 +12,8 @@
     }
     &__sliderContainer{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     
@@ -20,6 +24,7 @@
     &__singleSlider{
         position: relative;
         width: 250px;
+        min-width: 250px;
         height: 200px;
         background-color: rgb(255, 255, 255);
         border-radius: 5px;
@@ -89,3 +94,31 @@
 
 
 }
+
+    @media screen and (max-width:1000px) {
+
+        .workspacesSub{
+
+            &__header{
+                text-align: center;
+            }
+        }
+
+    }
+
+
+
+    @media screen and (max-width:700px) {
+    
+        .workspacesSub{
+
+            &__container{
+                margin: 10px;    
+            }
+
+            &__sliderContainer{
+                justify-content: center;
+            }
+        }
+    
+    }

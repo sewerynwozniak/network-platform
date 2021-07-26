@@ -1,7 +1,6 @@
 import {useEffect} from 'react'
 import {RootStateOrAny, useSelector, useDispatch} from 'react-redux'
 import './latestPublications-style.css';
-import postImg from '../../../assets/media/profileImage.png'
 import setPosts from '../../../redux/actions/postsAction'
 import setUsers from '../../../redux/actions/usersAction'
 import {setEntities} from '../../../redux/actions/entitiesAction'
@@ -51,6 +50,7 @@ const LatestPublications = () => {
 
 
                 {posts.posts.map(post=>(
+
                                 <div className='latestPublications__singleContainer'>
                                     <div className='latestPublications__singleImgContainer'>
                                         <img className='latestPublications__singleImg' src={filterPhotos(post.userId)} alt="" />

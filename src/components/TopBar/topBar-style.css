@@ -1,4 +1,4 @@
-.topBar {
+.topBar__first {
   position: relative;
   height: 50px;
   display: -webkit-box;
@@ -9,7 +9,17 @@
           align-items: center;
   -webkit-box-shadow: 0 4px 10px -2px #dfdfdf;
           box-shadow: 0 4px 10px -2px #dfdfdf;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topBar__second {
+  position: relative;
+  height: 50px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 4px 10px -2px #dfdfdf;
+          box-shadow: 0 4px 10px -2px #dfdfdf;
 }
 
 .topBar__logoContainer {
@@ -30,13 +40,21 @@
 
 .topBar__input {
   height: 60%;
-  width: 600px;
   border: 1px solid lightgray;
   border-radius: 5px;
   background-image: url(../../assets/media/icons/search.png);
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: center;
+}
+
+.topBar__input--first {
+  width: 500px;
+}
+
+.topBar__input--second {
+  width: 50%;
+  margin-left: 10px;
 }
 
 .topBar__homeBtn {
@@ -74,9 +92,6 @@
 }
 
 .topBar__rightContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -86,6 +101,16 @@
   position: absolute;
   right: 0;
   margin-right: 20px;
+}
+
+.topBar__rightContainer--first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.topBar__rightContainer--second {
+  display: none;
 }
 
 .topBar__notifications {
@@ -203,5 +228,34 @@
 
 .expMenu__logOutIcon {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .topBar__first {
+    -webkit-box-shadow: 0 1px 1px -1px #6d6d6d;
+            box-shadow: 0 1px 1px -1px #6d6d6d;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .topBar__second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .topBar__input--first {
+    display: none;
+  }
+  .topBar__rightContainer--first {
+    display: none;
+  }
+  .topBar__rightContainer--second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .expMenu__arrowDown {
+    margin: 0 10px;
+  }
 }
 /*# sourceMappingURL=topBar-style.css.map */

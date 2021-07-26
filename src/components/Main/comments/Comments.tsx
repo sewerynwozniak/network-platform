@@ -62,7 +62,7 @@ const displayPosts = (comments)=>{
         ))
     )
     
-
+ 
 }
 
 

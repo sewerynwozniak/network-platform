@@ -120,7 +120,7 @@ const menuList = [
     {
         key:11,
         name:'Leanne Graham',
-        path:'/profile',
+        path:'/test',
         srcIcon:photos[0]?.thumbnailUrl,
         category:'account'
     },

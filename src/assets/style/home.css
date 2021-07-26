@@ -3,15 +3,44 @@
   display: -ms-flexbox;
   display: flex;
   background-color: #f0f0f0;
+  min-height: 100vh;
 }
 
 .main {
   width: calc(100% - 300px);
+  background-color: #f8f8f8;
 }
 
 .noBtnStyle {
   border: none;
   margin: 0 10px;
   cursor: pointer;
+}
+
+.testComponent {
+  height: 100vh;
+}
+
+.testComponent__h1 {
+  margin: 10px;
+  color: #777777;
+}
+
+@media screen and (max-width: 1000px) {
+  .section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=home.css.map */

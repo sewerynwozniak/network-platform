@@ -3,41 +3,46 @@
     width: calc(100% - 300px);
 
     &__header{
+        min-width: 205px;
         margin: 50px;
-        height: 250px;
         background-color: #fff;
         
         &Upper{
-            height: 60%;
+            height: 150px;
             background-image: url('../../assets/media/conferenceRoom.jpg');
             background-position: center;
         }
         &Lower{
           position: relative;
-          height: 40%;
           display: flex;
           
             &Left{
-                width: 10%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                width: 100px;
+                position: relative;
+  
             }
             &Right{
                 width: 90%;
             }
-
+ 
         }
 
     }
 
+    &__img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
 
     &__blocksWrapper{
-        height: 250px;
         margin: 50px;
+        min-width: 200px;
         background-color: rgba(134, 134, 134, 0.562);
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         border-radius: 5px;
     }
@@ -69,11 +74,49 @@
     }
     &__p{
         color: rgb(90, 90, 90);
-        margin:10px
+        margin:20px
     }
 
+
+}
+
+
+
+@media screen and (max-width:1000px) {
     
+    .workspaces{
+
+        width: 100%;
+
+        &__header{
+
+            &Lower{
+
+                &Left{
+                    width: 50px;
+      
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    
+    .workspaces{
 
 
+        &__header{
+
+            &Lower{
+
+                &Left{
+                    display: none;
+      
+                }
+            }
+        }
+    }
 
 }

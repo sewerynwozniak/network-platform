@@ -15,7 +15,7 @@ import shareIcon from '../../assets/media/icons/share.png';
 import broadcastIcon from '../../assets/media/icons/broadcast.png';
 import xIcon from '../../assets/media/icons/x.png';
 import plusIcon from '../../assets/media/icons/plus.png';
-import { Console } from 'node:console'
+
 
 
 const Entities = () => {
@@ -51,7 +51,7 @@ const Entities = () => {
 
 
 
-
+ 
 const displayEntities = (entities)=>{
 
   
@@ -232,10 +232,25 @@ const sortEntities =()=>{
                 </div>
             </div>
 
+            <div className='entities__thirdTopBar'>              
+                    <input className='entities__input' placeholder='Filter by title' type="text" onChange={(e)=>setFilterInput(e.target.value.toLowerCase())}/>
+                    <div className="entities__btnWrapper">
+                        <button className='entities__followedBtn' onClick={handleExpandedBtn}>
+                            <img className='entities__followeBtnIcon' src={broadcastIcon} alt="" /> 
+                            Followed 
+                            <img className='entities__followeBtnIcon' src={arrowDownIcon}  alt="" />
+                        </button>                 
+                        <ul className={expanded? 'entities__expandedFilter': 'entities__displayNone'}>
+                            <li className='entities__expandedFilterLi' onClick={filterOwnEntities}>my</li>
+                            <li className='entities__expandedFilterLi' onClick={filterNone}>all</li>
+                        </ul>                 
+                    </div> 
+            </div>
+
 
             <div className= {mosaicView? 'entities__body  entities__mosaicView': 'entities__body  entities__horizontalView'}>  
               
-                {/* {filtered? displayEntities(entities.filter(e=>e.albumId==1)):displayEntities(entities)} */}
+            
                 {filtered? displayEntities(entities.filter(ent=>ent.albumId==1 && ent.title.indexOf(filterInput)!=-1)):
                         displayEntities(entities.filter(ent=>ent.title.indexOf(filterInput)!=-1))
                 }

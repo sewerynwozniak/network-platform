@@ -1,27 +1,26 @@
 .latestPublications{
 
     &__container{
+        position: relative;
         display: flex;
-        margin: 10px 50px;
-        height: 350px;
+        margin: 10px 50px;     
         width: 100%;
-        background-color: #fff;
     }
 
     &__mainContainer{
-        position: relative;
         width: 350px;
-        height: 100%;
+        height: 350px;     
     }
     &__mainImg{
         width: 100%;
         height: 100%;
+        margin: 30px 0;
     }
     &__rest{     
+        position: relative;
         margin-left: 20px;
         width: calc(100% - 350px); 
-        height: 100%;
-            
+        height: 100%;           
     }
 
     &__postDetails{
@@ -31,15 +30,15 @@
 
     &__header{
         margin: 10px;
-        color: rgb(87, 87, 87);
-        
+        color: rgb(87, 87, 87);      
     }
+
     &__postTitle{
         margin: 5px;
         color: rgb(66, 66, 66);
         font-weight: lighter;
-        max-width: 80%;
-    }
+        width: 400px;
+    } 
 
     &__postDate{
         margin: 0 5px;
@@ -52,6 +51,8 @@
 
     &__authorImg{
         margin: 0 5px;
+        width: 15px;
+        height: 15px;
     }
 
     &__seeMore{
@@ -62,16 +63,17 @@
 
 
     &__singleContainer{
-        width: 100%;
-        height: 23%;
         display: flex;
         margin: 10px 0;
+      
     }
     &__singleImgContainer{
         width: 100px;
         height: 100%;
         
     }
+
+  
 
     &__singleImg{
         width: 100%;
@@ -80,4 +82,92 @@
     }
     
     
+}
+
+
+@media screen and (max-width:1300px){
+
+    .latestPublications{
+
+        &__mainContainer{
+            margin-bottom: 50px;   
+        }
+
+        &__container{
+            flex-direction: column;
+            height: unset;
+            
+        }
+
+        &__rest{     
+            margin-left: unset;
+            width: 100%; 
+            height: unset;              
+        }
+
+
+        &__singleContainer{
+            display: flex;        
+            margin: 10px 0;
+            height: 81px;
+        }
+
+    }
+}
+
+@media screen and (max-width:1000px){
+
+    .latestPublications{
+
+        &__container{
+            align-items: center;
+            margin: 0;
+        }
+
+        &__rest{     
+            margin: 50px 10px;  
+            display: flex;
+            flex-direction: column;
+            align-items: center;        
+        }
+
+
+     
+
+
+    }
+}
+
+@media screen and (max-width:700px){
+
+    .latestPublications{
+
+        &__singleImgContainer{
+            display: none;
+        }
+
+        &__singleContainer{
+            height: initial;
+            margin: 20px 0;
+            overflow: auto;
+        }
+
+
+
+    }
+}
+@media screen and (max-width:500px){
+
+    .latestPublications{
+
+        &__mainContainer{
+            width: 250px;
+            height: 250px;
+        }
+
+        &__postTitle{
+            width: 280px
+        } 
+
+    }
 }

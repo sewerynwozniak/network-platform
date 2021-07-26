@@ -24,6 +24,12 @@
         width: 100%;
         position: relative;
     }
+    &__thirdTopBar{
+        display: none;
+        width: 30%;
+        position: relative;
+        margin: 10px 0;
+    }
     &__h5{
         width: calc(100% - 70px);
     }
@@ -232,6 +238,43 @@
     &__entitySubTitle{
         color: rgb(139, 139, 139);
         font-size: 13px;       
+    }
+
+}
+
+
+@media screen and (max-width:1300px) {
+    
+    .entities{
+
+        &__secondTopBar{
+    
+            &__left{
+                display: flex;
+                width: 60%;
+            }
+        }
+
+    }
+
+}
+
+
+
+@media screen and (max-width:1000px) {
+    
+    .entities{
+        &__wrapper{
+            width: 95%;        
+        }
+        &__secondTopBar__right{
+            display: none;
+        }
+
+        &__thirdTopBar{
+            display: flex;          
+        }
+
     }
 
 }

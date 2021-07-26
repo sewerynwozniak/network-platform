@@ -3,50 +3,50 @@
 }
 
 .workspaces__header {
+  min-width: 205px;
   margin: 50px;
-  height: 250px;
   background-color: #fff;
 }
 
 .workspaces__headerUpper {
-  height: 60%;
+  height: 150px;
   background-image: url("../../assets/media/conferenceRoom.jpg");
   background-position: center;
 }
 
 .workspaces__headerLower {
   position: relative;
-  height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .workspaces__headerLowerLeft {
-  width: 10%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100px;
+  position: relative;
 }
 
 .workspaces__headerLowerRight {
   width: 90%;
 }
 
+.workspaces__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .workspaces__blocksWrapper {
-  height: 250px;
   margin: 50px;
+  min-width: 200px;
   background-color: rgba(134, 134, 134, 0.562);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-radius: 5px;
@@ -81,6 +81,21 @@
 
 .workspaces__p {
   color: #5a5a5a;
-  margin: 10px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .workspaces {
+    width: 100%;
+  }
+  .workspaces__headerLowerLeft {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .workspaces__headerLowerLeft {
+    display: none;
+  }
 }
 /*# sourceMappingURL=workspaces-style.css.map */

@@ -12,7 +12,7 @@ const workspaces = () => {
                 </div>
                 <div className="workspaces__headerLower">
                     <div className="workspaces__headerLowerLeft">
-                        <img src={entitiesIcon} alt="" />
+                        <img className="workspaces__img" src={entitiesIcon} alt="" />
                     </div>
                     <div className="workspaces__headerLowerRight">
 

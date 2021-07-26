@@ -1,9 +1,9 @@
-import React from 'react'
+import '../assets/style/home.css'
 
 const Test = () => {
     return (
-        <div>
-            <h1>Test component</h1>
+        <div className='testComponent'>
+            <h1 className='testComponent__h1'>Test component</h1>
         </div>
     )
 }
